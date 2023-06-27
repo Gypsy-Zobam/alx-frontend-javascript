@@ -1,9 +1,13 @@
-import function getFullResponseFromAPI() {
-	const success = true;
+import default function (boolean) {
 	return new promise((resolve, reject) => {
-		if (success) {
-			resolve(status: 200, body: 'Success')
+		const object = {
+			status: 200,
+			200, body: 'Success',
+		};
+		if (boolean == true) {
+			resolve(object);
 		} else {
-			reject(The fake API is not working currently)
+			reject(Error('The fake API is not working currently'))
+		}
 	});
 }
