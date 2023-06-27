@@ -1,4 +1,4 @@
-import default function (boolean) {
+export default function (boolean) {
 	return new promise((resolve, reject) => {
 		const object = {
 			status: 200,
