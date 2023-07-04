@@ -1,7 +1,16 @@
-export default function getStudentsByLocation(listStudent, city, newGrades) {
-  return array.filter((obj) => obj.location === city).map((listStudent) => {
-      const gradeI = newGrades.filter((obj) => obj.studentId === listStudent.id).map((obj) => obj.grade)[0];
-      const grade = gradeI || 'N/A';
-      return { ...student, grade };
-    });
+export default function updateStudentGradeByCity(listStudents, city, newGrades) {
+  const students = listStudents.filter((student) => student.location === city);
+  for (const student of students) {
+    student.grade = 'N/A';
+  }
+  const newStudents = students.map((student) => {
+    const single = student;
+    for (const grade of newGrades) {
+      if (single.id === grade.studentId) {
+        single.grade = grade.grade;
+      }
+    }
+    return single;
+  });
+  return newStudents;
 }
